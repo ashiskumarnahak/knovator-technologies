@@ -1,0 +1,116 @@
+:root {
+  --primary-color: #0E1354;
+  --accent-gradient: linear-gradient(90deg, #4300FF, #0E1354);
+  --text-light: #f4f4f4;
+  --bg-light: #f7f7fc;
+}
+
+body {
+  margin: 0;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  background-color: var(--bg-light);
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  padding: 16px 24px;
+  background: var(--accent-gradient);
+  color: var(--text-light);
+}
+
+.header .logo {
+  height: 48px;
+  margin-right: 16px;
+}
+
+.header h1 {
+  font-size: 22px;
+  margin: 0;
+}
+
+.container {
+  flex: 1;
+  max-width: 1000px;
+  padding: 24px;
+  margin: 0 auto;
+}
+
+.form-section h2, .cards-section h2 {
+  color: var(--primary-color);
+}
+
+.register-button {
+  background: var(--primary-color);
+  color: var(--text-light);
+}
+
+.register-button:hover {
+  background: #0a0d3f;
+}
+
+.footer {
+  background: var(--primary-color);
+  color: var(--text-light);
+  text-align: center;
+  padding: 24px;
+}
+
+.form-section, .cards-section {
+  margin-bottom: 40px;
+}
+
+.register-box {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+
+.register-input {
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  flex: 1 1 200px;
+}
+
+.register-button {
+  padding: 10px 20px;
+  background-color: #28a745;
+  border: none;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.register-button:hover {
+  background-color: #218838;
+}
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.app-wrapper {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.container {
+  flex: 1;
+}
+
+.footer {
+  margin-top: auto;
+}
+
+
