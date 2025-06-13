@@ -10,7 +10,7 @@ pipeline {
         stage('Clone') {
             steps {
                 echo 'Cloning repository...'
-                git url: 'https://github.com/ashiskumarnahak/knovator-technologies.git', branch: 'main', credentialsId: 'github-pat'
+                git credentialsId: 'github-pat', url: 'https://github.com/ashiskumarnahak/knovator-technologies.git', branch: 'main'
             }
         }
 
@@ -49,8 +49,7 @@ pipeline {
                     }
 
                     dir('client') {
-                        // Use `serve` to host the React build on port 3002
-                        sh 'pm2 start "npx serve -s dist -l 3002" --name frontend'
+                        sh 'pm2 start "serve -s dist -l 3002" --name frontend'
                     }
 
                     sh 'pm2 save'
