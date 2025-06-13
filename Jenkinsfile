@@ -10,7 +10,7 @@ pipeline {
         stage('Clone') {
             steps {
                 echo 'Cloning repository...'
-                git url: 'https://github.com/<your-username>/<your-repo>.git', branch: 'main'
+                git url: 'https://github.com/ashiskumarnahak/knovator-technologies.git', branch: 'main', credentialsId: 'github-pat'
             }
         }
 
@@ -41,18 +41,16 @@ pipeline {
         stage('Deploy with PM2') {
             steps {
                 script {
-                    // Kill if already running
                     sh 'pm2 delete backend || true'
                     sh 'pm2 delete frontend || true'
 
-                    // Start backend
                     dir('server') {
                         sh 'pm2 start index.js --name backend'
                     }
 
-                    // Serve built frontend
                     dir('client') {
-                        sh 'pm2 start "serve -s dist -l 3002" --name frontend'
+                        // Use `serve` to host the React build on port 3002
+                        sh 'pm2 start "npx serve -s dist -l 3002" --name frontend'
                     }
 
                     sh 'pm2 save'
