@@ -1,5 +1,5 @@
 
-# Knovator Technologies - Full Stack App CI/CD Pipeline
+# Knovator Technologies - Game Shop Management System
 
 This project demonstrates a full-stack web application (Node.js backend + React frontend) with automated CI/CD using **Jenkins**, **PM2**, and **GitHub**. It is container-ready and can be deployed in a production environment with minimal changes.
 
